@@ -1,7 +1,7 @@
 **Documentation de l'API pour l'Upload de Fichiers CSV [BROUILLON]**
 
 **Introduction:**
-Cet API permet à nos partenaires d'uploader des fichiers CSV sur notre espace de stockage Google Cloud.
+Cet API permet à nos partenaires d'uploader des fichiers CSV qui seront importés et consolidés avec les données de La Vitrine. 
 
 **URL de base de l'API:** 
 https://URL_API
@@ -68,5 +68,4 @@ curl -X POST \
 ```
 
 Remplacez `VOTRE_CLÉ_API` par votre clé API et `chemin_vers_votre_fichier.csv` par le chemin vers votre fichier CSV.
-Of course! Let's integrate the new changes into the system.
 
