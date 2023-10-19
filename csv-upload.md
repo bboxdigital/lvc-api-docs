@@ -26,7 +26,7 @@ https://URL_API
     ```json
     {
         "status": "success",
-        "path": "source_name/schema/1234567890.csv"
+        "path": "[nom_partenaire]/events/1234567890.csv"
     }
     ```
 - `400 Bad Request`: Il y a eu un problème avec votre demande, comme un type de fichier incorrect ou un schéma invalide.
