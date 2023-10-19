@@ -1,7 +1,7 @@
-**Documentation de l'API pour l'Upload de Fichiers CSV**
+**Documentation de l'API pour l'Upload de Fichiers CSV [BROUILLON]**
 
 **Introduction:**
-Cette API permet à nos partenaires d'uploader des fichiers CSV sur notre espace de stockage Google Cloud.
+Cet API permet à nos partenaires d'uploader des fichiers CSV sur notre espace de stockage Google Cloud.
 
 **URL de base de l'API:** 
 https://URL_API
@@ -12,7 +12,7 @@ https://URL_API
 
 - **URL:** `/csv_upload`
 - **Méthode:** `POST`
-- **Description:** Cette endpoint permet d'uploader un fichier CSV.
+- **Description:** Cet endpoint permet d'uploader un fichier CSV.
 
 **Paramètres:**
 
