@@ -10,7 +10,7 @@ https://URL_API
 
 **Endpoint d'Upload:**
 
-- **URL:** `/csv_upload`
+- **URL:** `/v1/csv_upload`
 - **Méthode:** `POST`
 - **Description:** Cet endpoint permet d'uploader un fichier CSV.
 
@@ -64,7 +64,7 @@ curl -X POST \
      -H "Authorization: Bearer VOTRE_CLÉ_API" \
      -F "file=@chemin_vers_votre_fichier.csv" \
      -F "schema=events" \
-     https://URL_API/csv_upload
+     https://URL_API/v1/csv_upload
 ```
 
 Remplacez `VOTRE_CLÉ_API` par votre clé API et `chemin_vers_votre_fichier.csv` par le chemin vers votre fichier CSV.
