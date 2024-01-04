@@ -1,6 +1,12 @@
 # Place API
 **TODO: How to handle locationType? Place vs organization**\
-**TODO: How to handle containsPlace and containedInPlace**
+**TODO: How to handle containsPlace and containedInPlace** \
+**TODO: How to handle notion of "Sector"** \
+**TODO: How to manage place events?**
+
+TODO: Perhaps a query param flag to include basic offer data in response.
+
+Think about what information is required to render one single place page.
 ## Get a place
 ```yaml
 openapi: 3.0.0
@@ -147,4 +153,54 @@ paths:
           content:
             text/plain:
               example: "Place not found"
+```
+
+
+Example on how "offers" could be injected into Place data using "event".  ** not sure if this is needed as we can run queries using queryEvents and add place param
+```json
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "schema": "http://schema.org/"
+  },
+  "@type": "Place",
+  "name": "Example Venue",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Main Street",
+    "addressLocality": "Cityville",
+    "addressRegion": "Stateville",
+    "postalCode": "12345",
+    "addressCountry": "Countryland"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7128,
+    "longitude": -74.0060
+  },
+  "event": [
+    {
+      "@type": "Event",
+      "name": "Concert at Example Venue",
+      "startDate": "2024-01-10T18:00:00",
+      "endDate": "2024-01-10T22:00:00",
+      "description": "A fantastic live music concert at Example Venue.",
+      "location": {
+        "@type": "Place",
+        "name": "Example Venue"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Conference at Example Venue",
+      "startDate": "2024-02-15T09:00:00",
+      "endDate": "2024-02-16T17:00:00",
+      "description": "An informative conference covering various topics.",
+      "location": {
+        "@type": "Place",
+        "name": "Example Venue"
+      }
+    }
+  ]
+}
 ```

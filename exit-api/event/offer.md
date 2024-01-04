@@ -1,102 +1,33 @@
-# Offer
-Compiles offer data and event data, similar structure as event.
-May need to create custom JSON-LD structure for this...some structure from Event, some from Offer
-## Get single offer
-```yaml
-openapi: 3.0.0
-info:
-  title: Content API
-  version: 1.0.0
-paths:
-  /api/content/{eventId}/{offerId}:
-    parameters:
-      - name: eventId
-        in: path
-        required: true
-        description: The ID of the event.
-        schema:
-          type: string
-      - name: offerId
-        in: path
-        required: true
-        description: The ID of the offer.
-        schema:
-          type: string
-      - name: lang
-        in: query
-        description: Language parameter (fr or en, default: fr)
-        schema:
-          type: string
-          enum: [fr, en]
-          default: fr
-    get:
-      summary: Get content for a specific event and offer
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json:
-              example:
-                "@context": "https://schema.org"
-                "@type": "Event"
-                "id": 123
-                "name": "Sample Event"
-                "description": "This is a sample event description."
-                "startDate": "2024-01-01T10:00:00"
-                "endDate": "2024-01-01T17:00:00"
-                "previousStartDate": "2023-12-31T10:00:00"
-                "url": "https://example.com/sample-event"
-                "eventId": 13
-                "eventType": "Event"
-                "audience": "Adults"
-                "status": "Scheduled"
-                "location":
-                  "@type": "Place"
-                  "name": "Event Venue"
-                  "address":
-                    "@type": "PostalAddress"
-                    "streetAddress": "123 Main St"
-                    "addressLocality": "Cityville"
-                    "addressRegion": "CA"
-                    "postalCode": "12345"
-                    "addressCountry": "US"
-                "contributor":
-                  "@type": "Person"
-                  "name": "John Doe"
-                "offerContributor":
-                  "@type": "Organization"
-                  "name": "Event Organizer Inc."
-                "price": 50.00
-                "minimumPrice": 25.00
-                "availabilityStart": "2023-12-15T00:00:00"
-                "availabilityEnd": "2024-01-01T09:00:00"
-                "availability": "InStock"
-                "preSaleStart": "2023-12-01T12:00:00"
-                "attendanceMode": "Offline"
-                "isAccessibleForFree": false
-                "advanceBookingRequirement": "AdvanceBookingRequired"
-                "additionalType": "SpecialEvent"
-                "mainEntityOfPage": "https://example.com/sample-event-details"
-                "sameAs":
-                  - "https://twitter.com/sampleevent"
-                  - "https://facebook.com/sampleevent"
-        '404':
-          description: Offer Not Found
-          content:
-            text/plain:
-              example: "Offer Not Found"
-```
+# Offer (event offers, series, exhibitions)
 
-## Query Offers
+Normalized structure so that all different types of content can be injected into frontend seemlessly, in a standard way.
+
+Strategy is to combine all eventTypes together, then by adding filters clients can request specific data as needed (ex: only series, on this date, at this place)
+
+Think "search"... returns all instances of "showing".
+
+TODO: Create custom Schema for Offer
+
+The old "Activity" / representation
+
+The idea here is to provide an endpoint to query across all types of events, from there IDs and types can be used to retrieve specific event data from single APIs
+
+Think about how users would want to use this, what if they want to get all eventTypes for a given filter? Similar to artist spectacles, maybe users don't want to get all offers and only have the event data.
+
+Combines representations, exhibitions, series into one.  This endpoint could be used as a search feature where standardized data is required (ex: title, image, date, time, locaiton, url).
+
+
+
+## Query all events as offers (all types combined)
 ```yaml
 openapi: 3.0.0
 info:
   title: Content Offer API
   version: 1.0.0
 paths:
-  /api/content/offer/:
+  /api/content/offers/:
     get:
-      summary: Retrieve content offers
+      summary: Retrieve offers content, sorted chronologically by startDate
       parameters:
         - name: lang
           in: query
@@ -108,12 +39,46 @@ paths:
               - fr
               - en
           default: fr
-        - name: filter
+        - name: type
           in: query
-          description: Filtering criteria for content offers (To be determined)
+          description: query offers by specific event type only
           required: false
           schema:
             type: string
+            enum:
+             - event
+             - series
+             - exhibition
+        - name: eventId
+          in: query
+          description: filter on eventId, this will only return offers for a given eventId ("event" type).
+          required: false
+          schema:
+            type: string
+        - name: contributor
+          in: query
+          description: filter on contributor, this will return all offers for a given contributor ID
+          required: false
+          schema:
+            type: string
+        - name: place
+          in: query
+          description: query offers by specific place id (location)
+          required: false
+          schema:
+            type: string
+        - name: startDate
+          in: query
+          description: filter offers by startDate, if startDate is present, filter will return all offers on that date. A date value in ISO 8601 date format. YYYY-MM-DD.
+          required: false
+          schema:
+            type: date
+        - name: endDate
+          in: query
+          description: filter offers by endDate, if startDate is present, filter will return all offers within the range. If startDate is missing, filter will return all offers on or before endDate. A date value in ISO 8601 date format. YYYY-MM-DD.
+          required: false
+          schema:
+            type: date
         - name: limit
           in: query
           description: Limit the amount of data returned (default is 10)
