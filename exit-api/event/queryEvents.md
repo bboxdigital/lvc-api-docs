@@ -4,6 +4,7 @@ I think we can use this one to also filter by event type, this one doesn't have 
 Similar to get_activities
 
 Can be used to query specify types by passing parameter.
+
 ```yaml
 openapi: 3.0.0
 info:

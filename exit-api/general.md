@@ -8,12 +8,14 @@
 - "exhibition" type events don't include offers as this data is found directly on the schema itself.
 - "series" type events don't include offers as this data is found directly on the schema itself. Events of a series can be found in "subEvent" field.
 - Custom Schema for LVCOffer, which is used in offer fields and in the "/events" API. This schema defines key information related to the event or representation in a standardized way. Allowing for simpler integrations and data management.
+- JSON-LD is normally used on Frontends, response should follow Schema.org as much as possible but there will be times that it simply does not make sense.
+- For example, Ticketmaster provides an array of JSON-ld for each MusicEvent on the program. (20 MusicEvent Schema) in one jsonld array
 
 
 ## Offers
 Schema.org has a notion of Offers type but it doesn't fully represent how LVC uses offers. Schema.org Offers are essentially ticket information and price information.
 
-For LVC an Offer has been extended to include items such as location and contributions (contributor). For certain schemas (ex: event) custom LVCOffer type are used in the "offers" field to more accurately reflect LVC's approach.
+For LVC an "offer" has been extended to include items such as location and contributions (contributor). TODO: How to add this information into Event type schema?
 
 The /offers API does not use LVCOffer type, instead it returns Event type that closely follows Schema.org schema. 
 

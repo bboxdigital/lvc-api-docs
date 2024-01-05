@@ -1,0 +1,5 @@
+# Notes
+- I think the idea behind JSON-LD as API responses is not the best approach here.
+- A better approach will be to structure the response as much as possible from "Schema.org" standards (schemas and fields) so that users can inject their own JSON-LD into their page seemlessly with miminal effort and manipulation of data.
+- The main API response should be stripped of any Schema.org references (ex: @content). As an exit API we want the data to be as maluable as possible, providing what is needed to users and avoid bloat. Some user may not want JSON-LDs. Some might want to create their own JSON-LD for their site based on their own requirements and needs.
+- Perhaps we can have flags or separate API endpoints to return the JSON-LD format as we interpret from our side, leaving out domain specifics or links to internal pages (using @id).

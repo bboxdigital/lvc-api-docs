@@ -12,8 +12,21 @@ Not sure this is needed, perhaps this api can be used to return "event" + "offer
 
 Similar to get_activity but now only for "event" type
 
+
+Think about using "subEvent" as a way to hold "showings"
+Essentially, event pages are similar to series, where they hold a series of events (aka representations).  
+
+Type would still be Event, subEvent would be a collection of events with full information (location, dates, ticket info).
+
+This makes sense if we think about the URL strucuture used for LVC. /event/eventId/offerId
+
+Essentially, eventOffers are subEvent of event.
+
+For actual EventSeries, the same approach is used.  subEvent will be a list of all eventOffers for that Series.
+
+
 ## Get event (not representation)
-todo: add list of offers
+todo: add list of offers?? Not really offers as per Schema.org, more like "showings" or eventSchedule that include different locations
 ```yaml
 openapi: 3.0.0
 info:
@@ -82,8 +95,8 @@ paths:
             text/plain:
               example: "Event not found"
 ```
-
-## Get event representation (offer)
+## Get event representation
+Event type, includes Offer type (ticket + pricing)
 ```yaml
 openapi: 3.0.0
 info:
@@ -97,13 +110,13 @@ paths:
         required: true
         schema:
           type: string
-        description: "The ID of the event"
+        description: "The identifier of the event"
       - name: offerId
         in: path
         required: true
         schema:
           type: string
-        description: "The ID of the offer"
+        description: "The identifier of the eventOffer"
       - name: lang
         in: query
         schema:
@@ -114,7 +127,7 @@ paths:
           default: fr
         description: "The language parameter (fr or en, default: fr)"
     get:
-      summary: "Get representation data by ID"
+      summary: "Get representation data by identifier"
       responses:
         "200":
           description: "Successful response"
@@ -123,7 +136,7 @@ paths:
               example:
                 "@context": "https://schema.org"
                 "@type": "Event"
-                "id": 123
+                "identifier": 123
                 "name": "Sample Event"
                 "description": "This is a sample event description."
                 "startDate": "2024-01-01T10:00:00"
@@ -132,11 +145,13 @@ paths:
                 "url": "https://example.com/sample-event"
                 "eventId": 13
                 "eventType": "Event"
-                "audience": "Adults"
-                "status": "Scheduled"
+                "audience":
+                  "@type": "Audience"
+                  "audienceType": "Adult"
+                "eventStatus": "https://schema.org/EventScheduled"
                 "location":
                   "@type": "Place"
-                  "id": 13
+                  "identifier": 13
                   "name": "Event Venue"
                   "address":
                     "@type": "PostalAddress"
@@ -153,19 +168,24 @@ paths:
                   "@type": "Organization"
                   "identifier": 50
                   "name": "Event Organizer Inc."
-                "price": 50.00
-                "minimumPrice": 25.00
-                "availabilityStart": "2023-12-15T00:00:00"
-                "availabilityEnd": "2024-01-01T09:00:00"
-                "availability": "InStock"
-                "preSaleStart": "2023-12-01T12:00:00"
-                "attendanceMode": "Offline"
+                "offers":
+                  "@type": "Offer"
+                  "priceSpecification":
+                    "@type": "PriceSpecification"
+                    "minPrice": 25.00
+                    "price": 50.00
+                    "priceCurrency": "CAD"
+                  "availabilityStart": "2023-12-15T00:00:00"
+                  "availabilityEnd": "2024-01-01T09:00:00"
+                  "availability": "https://schema.org/InStock"
+                  "preSaleStart": "2023-12-01T12:00:00"
+                "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode"
                 "isAccessibleForFree": false
                 "advanceBookingRequirement": "AdvanceBookingRequired"
                 "superEvent":
                   "@type": "Event"
                   "name": "Parent Event"
-                  "id": 456
+                  "identifier": 456
                   "url": "https://example.com/parent-event"
                 "additionalType": "SpecialEvent"
                 "mainEntityOfPage": "https://example.com/sample-event-details"

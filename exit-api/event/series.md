@@ -5,7 +5,9 @@ Similar to get_activity but now only for "series" type
 
 Think series, what information do we need to render one single series page.
 
-What information should be included in the subEvent?
+TODO: include "offer" as per Schema.org standards.  Ticket + pricing info
+
+What information should be included in the subEvent? LVCOffer type perhaps.
 ```
 // Example of how to use subEvent
 {
