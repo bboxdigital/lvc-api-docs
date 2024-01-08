@@ -5,12 +5,22 @@ Notes: using "events_full" view or similar
 // Similar to old "get_activity"
 {
   "id": 492,
-  "type": "events",
+  "schema": "events",
   "eventStatus": "Scheduled",
   "name": "John Smith Comedy Show",
   "description": "Join us for a night of laughter with the hilarious John Smith.",
   "eventAttendanceMode": "Offline",
   "audience": "Adult",
+  "image": {
+    "name": "john-smith.jpg",
+    "contentUrl": "https://example.com/john-smith.jpg",
+    "copyrightType": "Copyright-free", // Copyright-free | Copyright
+    "encodingFormat": "image/jpeg",
+    "copyrightNotice": "© Example 2024", // or creditText
+  },
+  "medias": [
+    // Raw list of all medias
+  ], 
   "contributions": [ // What data is required here? Perhaps we could consolidate
     {
       "id": 402,
@@ -47,9 +57,11 @@ Notes: using "events_full" view or similar
     {
       //What data is required here?
       "id": 140,
+      "schema": "eventOffers",
       "eventId": 492,
-      "type": "eventOffers",
       "eventStatus": "Scheduled",
+      "eventAttendanceMode": "Offline",
+      "audience": "Adult",
       "startDate": "2024-02-15T19:00:00",
       "endDate": null, // Often null
       "isAccessibleForFree": false,
@@ -61,7 +73,8 @@ Notes: using "events_full" view or similar
       "advanceBookingRequirement": false,
       "location": {
         "id": 102,
-        "type": "Place", // Place | Organization
+        "schema": "places",
+        "type": "Place", // Place | Sector
         "name": "Example Place A",
         "address": { // Could combined to String instead, but more difficult for users to parse into JSON-LD
           "streetAddress": "789 Laughter Lane",

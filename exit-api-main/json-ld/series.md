@@ -1,18 +1,76 @@
-## Query All Event Type(s)
-I think we can use this one to also filter by event type, this one doesn't have "offers" or representations. it returns a list of all event id and types for a given filter.  From there, separate calls can be made to fetch additional information. This is useful to get list of all events within a place or artist
+# Series
+**TODO Think about using "superEvent" and "subEvent" to help with eventSeries structures what info do we need to include for subEvent?**
 
-Similar to get_activities
+Similar to get_activity but now only for "series" type
 
-Can be used to query specify types by passing parameter.
+Think series, what information do we need to render one single series page.
 
+TODO: include "offer" as per Schema.org standards.  Ticket + pricing info
+
+What information should be included in the subEvent? LVCOffer type perhaps.
+```
+// Example of how to use subEvent
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "Music Festival",
+  "startDate": "2024-07-01T18:00:00-07:00",
+  "endDate": "2024-07-03T23:59:59-07:00",
+  "location": {
+    "@type": "Place",
+    "name": "City Park",
+    "address": "123 Main St, Cityville"
+  },
+  "subEvent": [
+    {
+      "@type": "MusicEvent",
+      "name": "Opening Concert",
+      "startDate": "2024-07-01T18:00:00-07:00",
+      "endDate": "2024-07-01T22:00:00-07:00",
+      "performer": {
+        "@type": "MusicGroup",
+        "name": "Awesome Band"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Day 2 Performances",
+      "startDate": "2024-07-02T12:00:00-07:00",
+      "endDate": "2024-07-02T23:59:59-07:00",
+      "performer": {
+        "@type": "MusicGroup",
+        "name": "Rockin' Ensemble"
+      }
+    },
+    {
+      "@type": "MusicEvent",
+      "name": "Closing Night Party",
+      "startDate": "2024-07-03T19:00:00-07:00",
+      "endDate": "2024-07-03T23:59:59-07:00",
+      "performer": {
+        "@type": "MusicGroup",
+        "name": "Funky Beats Crew"
+      }
+    }
+  ]
+}
+
+```
+## Get Series
 ```yaml
 openapi: 3.0.0
 info:
-  title: Query Events API
+  title: Series API
   version: 1.0.0
 paths:
-  "/api/content/events":
+  "/api/content/series/{id}":
     parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: "The ID of the event"
       - name: lang
         in: query
         schema:
@@ -22,40 +80,8 @@ paths:
             - en
         default: fr
         description: "The language parameter (fr or en, default: fr)"
-      - name: type
-        description: Type of event (event, exhibition, series), if not applied, all types are shown.
-        in: query
-      - name: place
-        description: Reference of ID of a place used to filter results. If present, the ids parameter won't be used.
-        in: query
-      - name: startDate
-        description: startDate of events. ISO 8601 Format 
-        in: query
-      - name: endDate
-        description: endDate of events
-        in: query
-      - name: contributor
-        description: ID of contributor to fetch events
-        in: query
-      - name: discipline
-        description: ID of discipline to fetch events
-        in: query
-      - name: limit
-        in: query
-        description: Limit the amount of data returned (default is 10)
-        required: false
-        schema:
-          type: integer
-          default: 10
-      - name: offset
-        in: query
-        description: Offset for paginating results (default is 0)
-        required: false
-        schema:
-          type: integer
-          default: 0
     get:
-      summary: "Get list of events based on filters defined in parameters"
+      summary: "Get event data by ID"
       responses:
         "200":
           description: "Successful response"
@@ -97,8 +123,8 @@ paths:
                   "sameAs": "https://socialmedia.com/event123"
                 }
         "404":
-          description: "Events not found"
+          description: "Event not found"
           content:
             text/plain:
-              example: "Events not found"
+              example: "Event not found"
 ```
