@@ -25,3 +25,6 @@
 
    ## JSON-LD
    --Work in progress--
+
+   ## OpenAPI Swagger File
+   [Swagger File](main/swagger/swagger.yaml)

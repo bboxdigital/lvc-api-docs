@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to the official documentation for La Vitrine's REST API, a comprehensive interface designed to expose curated event data in Quebec to external partners. This API follows the OpenAPI standards, providing a reliable and flexible solution for accessing event-related information.
+Welcome to the official documentation for La Vitrine Culturelle's REST API, a comprehensive interface designed to expose curated event data in Quebec to external partners. This API follows the OpenAPI standards, providing a reliable and flexible solution for accessing event-related information.
 
 ## Background
 
@@ -16,8 +16,8 @@ The API offers a set of main endpoints, allowing external partners to seamlessly
 
 - **Events:** Retrieve information about individual events.
 - **Contributors:** Access details about contributors associated with events.
-- **Places:** Fetch data related to event venues or places.
-- **Query:** A versatile endpoint enabling users to perform queries across all event types.
+- **Location:** Fetch data related to event venues or locations.
+- **Event Query:** A versatile endpoint enabling users to perform queries across all event types.
 
 ### 2. Data Structure
 
@@ -33,6 +33,6 @@ One of the key improvements in this API is the increased level of granularity ac
 
 ## Getting Started
 
-To begin using the La Vitrine REST API, refer to the detailed [documentation](documentation). Explore the available functionalities, understand the request and response structures, and leverage the power of La Vitrine's curated event data for your applications.
+To begin using the La Vitrine REST API, refer to the detailed [documentation](documentation.md). Explore the available functionalities, understand the request and response structures, and leverage the power of La Vitrine's curated event data for your applications.
 
 Thank you for choosing La Vitrine as your cultural events partner. We are excited to see the innovative applications and experiences that will emerge through the utilization of this API. If you have any questions or need assistance, please don't hesitate to reach out to our support team.
