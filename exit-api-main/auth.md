@@ -1,6 +1,6 @@
-# Quick Start Guide: REST Open API with Standard Access Tokens
+# Quick Start Guide: REST OpenAPI with Standard Access Tokens
 
-Welcome to the world of RESTful APIs! This quick start guide will help you get started with a REST Open API, utilizing standard access tokens passed through the Authorization header. Follow these steps to seamlessly integrate with the API and access its resources.
+Welcome to the world of RESTful APIs! This quick start guide will help you get started with a REST OpenAPI, utilizing standard access tokens passed through the Authorization header. Follow these steps to seamlessly integrate with the API and access its resources.
 
 ## Step 1: Obtain API Credentials
 
@@ -56,4 +56,4 @@ Be prepared to handle errors by checking the HTTP status codes and error respons
 
 - **API Documentation:** Refer to the API documentation for specific details on available resources, request parameters, and response formats.
 
-Congratulations! You've successfully set up and authenticated with a REST Open API. Use this guide as a starting point and refer to the API documentation for more advanced features and customization options. Happy coding!
+Congratulations! You've successfully set up and authenticated with a REST OpenAPI. Use this guide as a starting point and refer to the API documentation for more advanced features and customization options. Happy coding!

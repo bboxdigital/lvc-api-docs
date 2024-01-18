@@ -15,8 +15,8 @@
 - **Authentication Improvements:**
   - Implemented a new, more secure, and standardized authentication method for users.
 
-- **Open API Standards:**
-  - Standardized the API following Open API Standards to enhance interoperability and ease of use.
+- **OpenAPI Standards:**
+  - Standardized the API following OpenAPI Standards to enhance interoperability and ease of use.
 
 ### Data Model Changes
 
