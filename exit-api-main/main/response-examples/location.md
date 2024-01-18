@@ -1,4 +1,4 @@
-# Place
+# Location
 Notes: using "places_full" view or similar
 ```json
 // Example of event data
