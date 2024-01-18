@@ -1,7 +1,7 @@
 # La Vitrine Content API Documentation
 
 ## Quick Start
-- [Introduction](introduction)
+- [Migration Guide](./migration/migration.md)
 - [API Key](#)
 
 ## Authentication
@@ -23,8 +23,8 @@
    1. [Discipline](main/discipline.md)
    2. [Query Disciplines](main/discipline.md#query-disciplines)
 
-   ## JSON-LD
-   --Work in progress--
+## OpenAPI Swagger File
+[Swagger File](main/swagger/swagger.yaml)   
 
-   ## OpenAPI Swagger File
-   [Swagger File](main/swagger/swagger.yaml)
+## JSON-LD
+--Work in progress--

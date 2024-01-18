@@ -1,8 +1,8 @@
-# La Vitrine REST API Documentation
+# La Vitrine Culturelle (LVC) REST API Documentation
 
 ## Introduction
 
-Welcome to the official documentation for La Vitrine Culturelle's REST API, a comprehensive interface designed to expose curated event data in Quebec to external partners. This API follows the OpenAPI standards, providing a reliable and flexible solution for accessing event-related information.
+Welcome to the official documentation for La Vitrine Culturelle's (LVC) REST API, a comprehensive interface designed to expose curated event data in Quebec to external partners. This API follows the OpenAPI standards, providing a reliable and flexible solution for accessing event-related information.
 
 ## Background
 
@@ -16,8 +16,8 @@ The API offers a set of main endpoints, allowing external partners to seamlessly
 
 - **Events:** Retrieve information about individual events.
 - **Contributors:** Access details about contributors associated with events.
-- **Location:** Fetch data related to event venues or locations.
-- **Event Query:** A versatile endpoint enabling users to perform queries across all event types.
+- **Location:** Fetch data related to event venues or location.
+- **Query:** A versatile endpoint enabling users to perform queries across all event types.
 
 ### 2. Data Structure
 
@@ -25,11 +25,15 @@ Efforts have been made to align the JSON structure closely with the Schema.org s
 
 ### 3. JSON-LD Endpoints
 
-For users seeking a more structured and linked representation of key content, the API offers separate JSON-LD endpoints. These endpoints provide a basic JSON-LD representation of essential information, such as event details, allowing for richer and more context-aware data consumption.
+For users seeking a more structured and linked representation of key content, the API offers separate JSON-LD endpoints. These endpoints provide a basic JSON-LD representation of essential information, such as event details, allowing for richer and more context-aware data consumption. It will allow users to seemlessly inject JSON-LD into their pages.
 
 ### 4. Granularity Enhancement
 
 One of the key improvements in this API is the increased level of granularity across various fronts. La Vitrine's partners now have access to a more detailed and comprehensive dataset, empowering them with richer information for a more engaging user experience.
+
+## Migration
+
+Refer to migration [documentation](migration/migration.md) for more information on key differences and how to transition from the old system.
 
 ## Getting Started
 
