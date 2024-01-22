@@ -8,7 +8,7 @@
 3. [Pour Commencer](#pour-commencer)
    - [Étape 1 : Obtenir une clé d'accès pour l'API](#étape-1--obtenir-une-clé-daccès-pour-lapi)
    - [Étape 2 : Authentification](#étape-2--authentification)
-4. [Migration](#migration)
+4. [Migration de l'ancien API](#migration-de-lancien-api)
 
 ## Introduction
 
