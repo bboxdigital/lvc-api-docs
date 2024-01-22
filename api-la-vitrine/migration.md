@@ -22,7 +22,8 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
 ## Changements du Modèle de Données
 
 - **Suppression d'organisme :**
-  - L'entité `organisme` a été supprimée du modèle de données. _(Considération pour une future addition en attente.)_
+  - L'entité `organisme` a été supprimée du modèle de données.
+  - Des filtres pourront être utilisés pour arriver à une fonctionnalité équivalente.
 
 - **Classification des Lieux :**
   - Les `secteurs` sont maintenant classifiés comme des `place` avec des types spécifiques.
@@ -33,8 +34,9 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
   - Introduction de `eventSeries` comme une entité de données distincte.
   - Introduction de `contributors` pour remplacer le concept précédent d'artiste.
 
-- **Points de Terminaison JSON-LD (Travail en Cours) :**
-  - Introduction de points de terminaison JSON-LD comme un travail en cours, améliorant les capacités de Données Liées.
+- **Les disciplines sont maintenant des additionalTypes :**
+  - Le concept de discipline a été remplacé par les additionalTypes, qui sont un système de taxonomie plus générique.
+  - Un mécanisme pour établir les équivalences entre les disciplines et additionalTypes sera documenté.
 
 ## Migrer depuis `get_events`
 Remplacé par le point de terminaison `/api/v1/searchEvents`. Voir la [documentation](v1/searchEvents.md) pour plus de détails.
