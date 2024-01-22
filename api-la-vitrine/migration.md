@@ -37,7 +37,7 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
   - Introduction de points de terminaison JSON-LD comme un travail en cours, améliorant les capacités de Données Liées.
 
 ## Migrer depuis `get_events`
-Remplacé par le point de terminaison `/api/v1/search/`. Voir la [documentation](v1/search.md) pour plus de détails.
+Remplacé par le point de terminaison `/api/v1/search`. Voir la [documentation](v1/search.md) pour plus de détails.
 
 ## Migrer depuis `get_activity` & `get_activitypublic`
 Remplacé par `/api/v1/events`, `/api/v1/exhibitionEvents`, `/api/v1/eventSeries`.
@@ -48,6 +48,7 @@ Les utilisateurs peuvent maintenant récupérer des données d'événements indi
 
 Veuillez vous référer à la documentation des points de terminaison pour plus d'informations :
 - [events](v1/events.md)
+- [eventOffer](../v1/events.md#obtenir-un-eventoffer-representation)
 - [exhibitionEvents](v1/exhibitionEvents.md)
 - [eventSeries](v1/eventSeries.md)
 
