@@ -1,78 +1,78 @@
-# Query All Events (event offers, series, exhibitions)
+# Chercher/lister tous les événements (eventOffers, eventSeries, exhibitionEvents)
 ```yaml
-/api/v1/allEvents:
+/api/v1/search:
   get:
-    summary: Retrieve event content, sorted chronologically by startDate
+    summary: Chercher/lister les événements, ordonnés par startDate
     parameters:
       - name: schema
         in: query
-        description: filter by specific event type only
+        description: Filtrer par type d'événement
         required: false
         schema:
           type: string
           enum:
             - event
-            - series
-            - exhibition
+            - eventSeries
+            - exhibitionEvent
       - name: eventId
         in: query
-        description: filter on eventId, this will only return "offers" for a given eventId ("event" type).
+        description: Filter par eventId, retournera tous les eventOffers correspondants (type "event" seulement).
         required: false
         schema:
           type: string
       - name: contributor
         in: query
-        description: filter on contributor, this will return all "offers" for a given contributor
+        description: Filter par contributor, retournera tous les eventOffers correspondants.
         required: false
         schema:
           type: string
       - name: location
         in: query
-        description: filter on location, this will return all "offers" for a given location
+        description: Filter par location, retournera tous les eventOffers correspondants.
         required: false
         schema:
           type: string
-      - name: discipline
+      - name: additionalType
         in: query
-        description: filter on discipline, this will return all "offers for a given discipline.
+        description: Filter par additionalType, retournera tous les eventOffers correspondants.
         required: false
         schema: 
           type: string
       - name: startDate
         in: query
-        description: filter on startDate (UNIX Timestamp), this will return all "offers" for a given startDate.
+        description: Filter par startDate (UNIX Timestamp), retournera tous les eventOffers correspondants.
         required: false
         schema:
           type: integer
       - name: endDate
         in: query
-        description: filter on date range by adding endDate (UNIX Timestamp) if startDate has a value. If startDate is null, filter on endDate only.
+        description: Filtrer par plage de dates en ajoutant endDate (UNIX Timestamp) si startDate a une valeur. Si startDate est nul, filtrez uniquement sur endDate.
         required: false
         schema:
           type: integer
       - name: limit
         in: query
-        description: Limit the amount of data returned (default is 10)
+        description: Limiter le nombre d'items retournés (10 par défaut)
         required: false
         schema:
           type: integer
           default: 10
       - name: offset
         in: query
-        description: Offset for paginating results (default is 0)
+        description: Décalage pour la pagination des résultats (0 par défaut)
         required: false
         schema:
           type: integer
           default: 0
       - name: lastModified
         in: query
-        description: UNIX Timestamp (UTC)
+        description: UNIX Timestamp (UTC) de la dernière modification
         required: false
         schema:
           type: integer
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -253,9 +253,9 @@
                 }
               ]
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: Not found.
+        description: Non trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```

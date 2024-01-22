@@ -1,17 +1,18 @@
-# Location API
-## Get a location
+# places API
+## Obtenir une place
 ```yaml
-/api/v1/location/{id}:
+/api/v1/places/{id}:
   get:
+    summary: Obtenir les données d'une place par ID
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-        description: The ID of the location
+        description: L'ID de la place
       - name: lang
-        description: which language data to use
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         in: query
         schema:
           type: string
@@ -19,7 +20,6 @@
           enum:
             - "fr"
             - "en"
-    summary: Get location details by ID
     responses:
       '200':
         description: OK
@@ -31,7 +31,7 @@
                 "schema": "places",
                 "type": "Place",
                 "name": "Event Venue A",
-                "description": "A beautiful location to host your next event",
+                "description": "A beautiful place to host your next event",
                 "address": {
                   "streetAddress": "789 Laughter Lane",
                   "addressLocality": "Humorville",
@@ -68,17 +68,17 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: A location with specified ID not found.
+        description: Une place avec l'ID fourni n'a pas été trouvée.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
-## Query Locations
+## Chercher/lister les places
 ```yaml
-/api/v1/location:
+/api/v1/places:
   get:
-    summary: Query locations
+    summary: Chercher/lister les places
     parameters:
       - name: type
         in: query
@@ -87,13 +87,13 @@
           enum:
           - "Place"
           - "Sector"
-        description: filter by type of location, optional
+        description: Filtrer par type de place, optionnel
       - name: hasOfferFilter
         in: query
         schema:
           type: boolean
           default: true
-        description: by default, locations will be filtered by if they have offers. 
+        description: Par défaut, seulement les places qui ont des offres associées seront listées
       - name: lastModified
         in: query
         description: UNIX Timestamp (UTC)
@@ -101,7 +101,7 @@
         schema:
           type: integer
       - name: lang
-        description: which language data to use
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         in: query
         schema:
           type: string
@@ -121,7 +121,7 @@
                   "schema": "places",
                   "type": "Place",
                   "name": "Event Venue A",
-                  "description": "A beautiful location to host your next event",
+                  "description": "A beautiful place to host your next event",
                   "address": {
                     "streetAddress": "789 Laughter Lane",
                     "addressLocality": "Humorville",
@@ -159,9 +159,9 @@
                 }
               ]
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: Not found.
+        description: Non trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```

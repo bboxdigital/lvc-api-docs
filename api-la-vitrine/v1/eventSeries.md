@@ -1,20 +1,20 @@
-# Series
+# eventSeries
 
-## Get Series
+## Obtenir un eventSeries
 ```yaml
-/api/v1/series/{id}:
+/api/v1/eventSeries/{id}:
   get:
-    summary: Get event series data by ID
+    summary: Obtenir les données d'un eventSeries par ID
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-        description: The ID of the series
+        description: L'ID de l'eventSeries
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -168,10 +168,10 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: Event Series with specified ID not found.
+        description: un eventSeries avec l'ID fourni n'a pas été trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
 

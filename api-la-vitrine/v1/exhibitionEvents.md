@@ -1,19 +1,19 @@
-# Exhibition
-## Get exhibition
+# exhibitionEvent
+## Obtenir un exhibitionEvent
 ```yaml
-/api/v1/exhibition/{id}:
+/api/v1/exhibitionEvents/{id}:
   get:
-    summary: Get exhibition data by ID
+    summary: Obtenir les données d'un exhibitionEvent par ID
     parameters:
       - name: id
         in: path
         required: true
         schema:
           type: string
-        description: The ID of the exhibition
+        description: L'ID de l'exhibitionEvent
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -91,10 +91,10 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '404':
-        description: An Exhibition with specified ID was not found.
+        description: Un exhibitionEvent avec l'ID fourni n'a pas été trouvé.
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
 

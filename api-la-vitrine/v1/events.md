@@ -1,19 +1,19 @@
 # Event
-## Get event
+## Obtenir un event
 ```yaml
-/api/v1/event/{id}:
+/api/v1/events/{id}:
   get:
-    summary: Get event data by ID
+    summary: Obtenir les données d'un event par ID
     parameters:
     - name: id
       in: path
       required: true
       schema:
         type: string
-      description: The ID of the event
+      description: L'ID de l'event
     - name: lang
       in: query
-      description: Language preference for data (fr or en, default is fr)
+      description: Langue préférée pour les données (fr ou en, fr par défaut)
       schema:
         type: string
         enum:
@@ -110,33 +110,33 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: An Event with specified ID not found.
+        description: An Event avec l'ID fourni n'a pas été trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
-## Get eventOffer (representation)
+## Obtenir un eventOffer (representation)
 ```yaml
-/api/v1/event/{eventId}/{offerId}:
+/api/v1/events/{eventId}/{offerId}:
   get:
-    summary: Get representation data by identifier
+    summary: Obtenir les données d'un eventOffer par ID
     parameters:
       - name: eventId
         in: path
         required: true
         schema:
           type: string
-        description: The identifier of the event
+        description: L'ID de l'event
       - name: offerId
         in: path
         required: true
         schema:
           type: string
-        description: The identifier of the eventOffer
+        description: L'ID de l'eventOffer
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -257,9 +257,9 @@
                   "lastModified": "2024-02-15T19:00:00"
                 }
         '401':
-          description: Authorization information is missing or invalid.
+          description: La clé d'API est manquante ou invalide.
         '404':
-          description: An Event offer with specified ID not found.
+          description: Un eventOffer avec l'ID fourni n'a pas été trouvé.
         '5XX':
-          description: Unexpected error.
+          description: Erreur inattendue.
 ```

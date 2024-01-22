@@ -1,19 +1,19 @@
 # Contributor API
-## Get a contributor
+## Obtenir un contributor
 ```yaml
-/api/v1/contributor/{id}:
+/api/v1/contributors/{id}:
   get:
-    summary: Get Contributor data
+    summary: Obtenir les données d'un contributor
     parameters:
       - name: id
-        description: id of contributor
+        description: id du contributor
         in: path
         required: true
         schema:
           type: string
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -58,17 +58,17 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: A contributor with specified ID not found.
+        description: Un contributor avec l'ID fourni n'a pas été trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
-## Query Contributors
+## Chercher/lister les contributors
 ```yaml
 /api/v1/contributors:
   get:
-    summary: Query Contributors
+    summary: Chercher/lister les contributors
     parameters:
       - name: lastModified
         in: query
@@ -78,7 +78,7 @@
           type: integer
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -125,9 +125,9 @@
                 },
               ]
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: Not found.
+        description: Non trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```

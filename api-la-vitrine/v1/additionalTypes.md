@@ -1,19 +1,19 @@
-# Discipline API
-## Get a discipline
+# additionalType API
+## Obtenir un additionalType
 ```yaml
-/api/v1/discipline/{id}:
+/api/v1/additionalTypes/{id}:
   get:
-    summary: Get Discipline data
+    summary: Obtenir les données d'un additionalType
     parameters:
       - name: id
-        description: id of discipline
+        description: id du additionalType
         in: path
         required: true
         schema:
           type: string
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -34,17 +34,17 @@
                 "lastModified": "2024-02-15T19:00:00"
               }
       '401':
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: A Discipline with specified ID not found.
+        description: Un additionalType avec l'ID fourni n'a pas été trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
-## Query Disciplines
+## Chercher/lister les additionalTypes
 ```yaml
-/api/v1/discipline:
+/api/v1/additionalTypes:
   get:
-    summary: Query disciplines
+    summary: Chercher/lister les additionalTypes
     parameters:
       - name: lastModified
         in: query
@@ -54,7 +54,7 @@
           type: integer
       - name: lang
         in: query
-        description: Language preference for data (fr or en, default is fr)
+        description: Langue préférée pour les données (fr ou en, fr par défaut)
         schema:
           type: string
           enum:
@@ -84,9 +84,9 @@
                 },
               ]
       '401': 
-        description: Authorization information is missing or invalid.
+        description: La clé d'API est manquante ou invalide.
       '404':
-        description: Not found.
+        description: Non trouvé.
       '5XX':
-        description: Unexpected error.
+        description: Erreur inattendue.
 ```
