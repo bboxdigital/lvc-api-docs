@@ -30,7 +30,7 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
 
 - **Nouvelles Entités de Données :**
   - Introduction de `eventOffers` pour remplacer le concept précédent de représentations.
-  - Introduction de `exhibitions` comme une entité de données distincte.
+  - Introduction de `exhibitionEvents` comme une entité de données distincte.
   - Introduction de `eventSeries` comme une entité de données distincte.
   - Introduction de `contributors` pour remplacer le concept précédent d'artiste.
 
@@ -50,7 +50,7 @@ Les utilisateurs peuvent maintenant récupérer des données d'événements indi
 
 Veuillez vous référer à la documentation des points de terminaison pour plus d'informations :
 - [events](v1/events.md)
-- [eventOffer](v1/events.md#obtenir-un-eventoffer-representation)
+- [eventOffers](v1/events.md#obtenir-un-eventoffer-representation)
 - [exhibitionEvents](v1/exhibitionEvents.md)
 - [eventSeries](v1/eventSeries.md)
 
