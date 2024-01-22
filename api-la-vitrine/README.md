@@ -1,5 +1,15 @@
 # API REST de La Vitrine Culturelle (LVC)
 
+1. [Introduction](#introduction)
+2. [Caractéristiques Clés](#caractéristiques-clés)
+   - [1. Aperçu des Points de Terminaison](#1-aperçu-des-points-de-terminaison)
+   - [2. Structure des Données](#2-structure-des-données)
+   - [3. Définition OpenAPI Swagger](#3-définition-openapi-swagger)
+3. [Pour Commencer](#pour-commencer)
+   - [Étape 1 : Obtenir une clé d'accès pour l'API](#étape-1--obtenir-une-clé-daccès-pour-lapi)
+   - [Étape 2 : Authentification](#étape-2--authentification)
+4. [Migration](#migration)
+
 ## Introduction
 
 Bienvenue dans la documentation officielle de l'API REST de La Vitrine Culturelle (LVC), une interface complète conçue pour exposer les données d'événements au Québec à des partenaires externes. Cette API suit les normes OpenAPI, offrant une solution fiable et flexible pour accéder aux informations liées aux événements.
@@ -45,6 +55,6 @@ Authorization: Bearer VOTRE_CLÉ_API
 
 Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 
-## Migration
+## Migration de l'ancien API
 
 Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).

@@ -74,6 +74,4 @@ Veuillez vous référer à la [documentation](v1/contributors.md) pour plus d'in
 ## Migrer depuis `get_disciplines`
 Remplacé par `/api/v1/additionalTypes`
 
-_Ce point de terminaison est toujours en cours de spécification._
-
 Veuillez vous référer à la [documentation](v1/additionalTypes.md) pour plus d'informations.
