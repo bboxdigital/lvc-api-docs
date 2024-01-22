@@ -37,7 +37,9 @@ Des efforts ont été faits pour aligner étroitement la structure JSON avec les
 
 Vous pouvez visualiser l'API dans [l'éditeur d'API Swagger](https://editor.swagger.io/) en faisant un copier-coller des contenus du fichier ci-dessus:
 
-[Swagger File](v1/swagger/swagger.yaml)   
+[Swagger File](v1/swagger/swagger.yaml)
+
+[Cliquer ici](https://app.screencastify.com/v3/watch/TwH4f13leSEVbsdRJePn) pour une courte vidéo qui montre comment utiliser l'éditeur.
 
 ## Pour Commencer
 
