@@ -1,6 +1,6 @@
 # Chercher/lister tous les événements (eventOffers, eventSeries, exhibitionEvents)
 ```yaml
-/api/v1/search:
+/api/v1/searchEvents:
   get:
     summary: Chercher/lister les événements, ordonnés par startDate
     parameters:

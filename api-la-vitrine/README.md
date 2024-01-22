@@ -11,12 +11,13 @@ Bienvenue dans la documentation officielle de l'API REST de La Vitrine Culturell
 L'API propose un ensemble de points de terminaison principaux, permettant aux partenaires externes de récupérer facilement des données de la base de données de La Vitrine. Les points de terminaison principaux incluent:
 
 - **[events](v1/events.md):** Récupérer des informations sur les événements individuels.
+  - **[eventOffer](../v1/events.md#obtenir-un-eventoffer-representation):**: Les offres (représentation) reliées à un événement.
 - **[eventSeries](v1/eventSeries.md):** Récupérer des informations sur les séries d'événements (festivals, tournées, etc...)
 - **[exhibitionEvents](v1/exhibitionEvents.md):** Récupérer des informations sur les expositions.
 - **[contributors](v1/contributors.md):** Accéder aux détails sur les contributeurs et artistes associés aux événements.
 - **[places](v1/places.md):** Récupérer des données liées aux lieux ou emplacements des événements.
 - **[additionalTypes](v1/additionalTypes.md):** Correspondent à des taxonomies pour catégoriser les données, par exemple la discipline (danse, musique, etc...)
-- **[search](v1/search.md):** Un point de terminaison polyvalent permettant aux utilisateurs d'effectuer des recherches sur tous les types d'événements.
+- **[searchEvents](v1/searchEvents.md):** Un point de terminaison polyvalent permettant aux utilisateurs d'effectuer des recherches sur tous les types d'événements.
 
 ### 2. Structure des Données
 
@@ -47,7 +48,3 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 ## Migration
 
 Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
-
-## Points de Terminaison JSON-LD
-
-Pour les utilisateurs recherchant une représentation plus structurée et liée du contenu clé, l'API propose des points de terminaison JSON-LD séparés. Ces points de terminaison fournissent une représentation JSON-LD de base des informations essentielles, telles que les détails des événements, permettant une consommation de données plus riche et plus contextuelle. Cela permettra aux utilisateurs d'injecter facilement du JSON-LD dans leurs pages. _NOTE: documentation à venir_

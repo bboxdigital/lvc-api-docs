@@ -37,7 +37,7 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
   - Introduction de points de terminaison JSON-LD comme un travail en cours, améliorant les capacités de Données Liées.
 
 ## Migrer depuis `get_events`
-Remplacé par le point de terminaison `/api/v1/search`. Voir la [documentation](v1/search.md) pour plus de détails.
+Remplacé par le point de terminaison `/api/v1/searchEvents`. Voir la [documentation](v1/searchEvents.md) pour plus de détails.
 
 ## Migrer depuis `get_activity` & `get_activitypublic`
 Remplacé par `/api/v1/events`, `/api/v1/exhibitionEvents`, `/api/v1/eventSeries`.
@@ -53,10 +53,9 @@ Veuillez vous référer à la documentation des points de terminaison pour plus 
 - [eventSeries](v1/eventSeries.md)
 
 ## Migrer depuis `get_activies` & `get_activiespublic`
-Remplacé par `/api/v1/search`
-Ce point de terminaison servira de requête pour tous les types d'événements et avec l'introduction d'une vaste gamme de paramètres de requête, similaires aux commandes précédentes.
+Remplacé par `/api/v1/searchEvents`. Ce point de terminaison servira de requête pour tous les types d'événements et avec l'introduction d'une vaste gamme de paramètres de requête, similaires aux commandes précédentes.
 
-Veuillez vous référer à la [documentation](v1/search.md) pour une liste détaillée de tous les paramètres de requête pris en charge.
+Veuillez vous référer à la [documentation](v1/searchEvents.md) pour une liste détaillée de tous les paramètres de requête pris en charge.
 
 ## Migrer depuis `get_locations` & `get_locationspublic`
 Remplacé par `/api/v1/places`, tous les `locations` et `sectors` sont maintenant sous le même point de terminaison.
