@@ -46,6 +46,8 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 
 Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
 
-## OpenAPI Swagger File
+## Définition OpenAPI Swagger
+
+Vous pouvez visualiser l'API dans [l'éditeur d'API Swagger](https://editor.swagger.io/) en faisant un copier-coller des contenus du fichier ci-dessus:
 
 [Swagger File](v1/swagger/swagger.yaml)   

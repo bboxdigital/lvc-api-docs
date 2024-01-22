@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: La Vitrine Culturelle Data Consumer API
   description: The La Vitrine Culturelle Data Consumer API is a RESTful API that provides access to La Vitrine Culturelle's data. The API is designed to be used by third-party applications that wish to display La Vitrine Culturelle's data on their own websites or applications.
