@@ -48,7 +48,7 @@ Les utilisateurs peuvent maintenant récupérer des données d'événements indi
 
 Veuillez vous référer à la documentation des points de terminaison pour plus d'informations :
 - [events](v1/events.md)
-- [eventOffer](../v1/events.md#obtenir-un-eventoffer-representation)
+- [eventOffer](v1/events.md#obtenir-un-eventoffer-representation)
 - [exhibitionEvents](v1/exhibitionEvents.md)
 - [eventSeries](v1/eventSeries.md)
 
