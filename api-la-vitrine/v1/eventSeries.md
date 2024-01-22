@@ -2,7 +2,7 @@
 
 ## Get Series
 ```yaml
-/api/content/series/{id}:
+/api/v1/series/{id}:
   get:
     summary: Get event series data by ID
     parameters:

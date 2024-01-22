@@ -1,7 +1,7 @@
 # Event
 ## Get event
 ```yaml
-/api/content/event/{id}:
+/api/v1/event/{id}:
   get:
     summary: Get event data by ID
     parameters:
@@ -118,7 +118,7 @@
 ```
 ## Get eventOffer (representation)
 ```yaml
-/api/content/event/{eventId}/{offerId}:
+/api/v1/event/{eventId}/{offerId}:
   get:
     summary: Get representation data by identifier
     parameters:

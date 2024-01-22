@@ -1,7 +1,7 @@
 # Exhibition
 ## Get exhibition
 ```yaml
-/api/content/exhibition/{id}:
+/api/v1/exhibition/{id}:
   get:
     summary: Get exhibition data by ID
     parameters:

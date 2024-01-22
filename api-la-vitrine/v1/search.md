@@ -1,6 +1,6 @@
 # Query All Events (event offers, series, exhibitions)
 ```yaml
-/api/content/allEvents:
+/api/v1/allEvents:
   get:
     summary: Retrieve event content, sorted chronologically by startDate
     parameters:

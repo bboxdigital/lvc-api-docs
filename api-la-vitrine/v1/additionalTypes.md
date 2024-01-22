@@ -1,7 +1,7 @@
 # Discipline API
 ## Get a discipline
 ```yaml
-/api/content/discipline/{id}:
+/api/v1/discipline/{id}:
   get:
     summary: Get Discipline data
     parameters:
@@ -42,7 +42,7 @@
 ```
 ## Query Disciplines
 ```yaml
-/api/content/discipline:
+/api/v1/discipline:
   get:
     summary: Query disciplines
     parameters:

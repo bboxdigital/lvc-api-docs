@@ -1,7 +1,7 @@
 # Location API
 ## Get a location
 ```yaml
-/api/content/location/{id}:
+/api/v1/location/{id}:
   get:
     parameters:
       - name: id
@@ -76,7 +76,7 @@
 ```
 ## Query Locations
 ```yaml
-/api/content/location:
+/api/v1/location:
   get:
     summary: Query locations
     parameters:

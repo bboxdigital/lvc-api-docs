@@ -9,7 +9,7 @@ servers:
   - url: https://staging-api.lavitrine.com
     description: Staging server
 paths:
-  /api/content/event/{id}:
+  /api/v1/event/{id}:
     get:
       summary: Get event data by ID
       parameters:
@@ -115,7 +115,7 @@ paths:
           description: An Event with specified ID not found.
         '5XX':
           description: Unexpected error.
-  /api/content/event/{eventId}/{offerId}:
+  /api/v1/event/{eventId}/{offerId}:
     get:
       summary: Get representation data by identifier
       parameters:
@@ -251,7 +251,7 @@ paths:
             description: An Event offer with specified ID not found.
           '5XX':
             description: Unexpected error.
-  /api/content/exhibition/{id}:
+  /api/v1/exhibition/{id}:
     get:
       summary: Get exhibition data by ID
       parameters:
@@ -338,7 +338,7 @@ paths:
           description: Authorization information is missing or invalid.
         '5XX':
           description: Unexpected error.
-  /api/content/series/{id}:
+  /api/v1/series/{id}:
     get:
       summary: Get event series data by ID
       parameters:
@@ -501,7 +501,7 @@ paths:
           description: Event Series with specified ID not found.
         '5XX':
           description: Unexpected error.
-  /api/content/allEvents:
+  /api/v1/allEvents:
     get:
       summary: Retrieve event content, sorted chronologically by startDate
       parameters:
@@ -751,7 +751,7 @@ paths:
           description: Not found.
         '5XX':
           description: Unexpected error.
-  /api/content/location/{id}:
+  /api/v1/location/{id}:
     get:
       parameters:
         - name: id
@@ -815,7 +815,7 @@ paths:
           description: A location with specified ID not found.
         '5XX':
           description: Unexpected error.
-  /api/content/location:
+  /api/v1/location:
     get:
       summary: Query locations
       parameters:
@@ -895,7 +895,7 @@ paths:
           description: Not found.
         '5XX':
           description: Unexpected error.
-  /api/content/contributor/{id}:
+  /api/v1/contributor/{id}:
     get:
       summary: Get Contributor data
       parameters:
@@ -949,7 +949,7 @@ paths:
           description: A contributor with specified ID not found.
         '5XX':
           description: Unexpected error.
-  /api/content/contributors:
+  /api/v1/contributors:
     get:
       summary: Query Contributors
       parameters:
@@ -1005,7 +1005,7 @@ paths:
           description: Not found.
         '5XX':
           description: Unexpected error.
-  /api/content/discipline/{id}:
+  /api/v1/discipline/{id}:
     get:
       summary: Get Discipline data
       parameters:
@@ -1035,7 +1035,7 @@ paths:
           description: A Discipline with specified ID not found.
         '5XX':
           description: Unexpected error.
-  /api/content/discipline:
+  /api/v1/discipline:
     get:
       summary: Query disciplines
       parameters:

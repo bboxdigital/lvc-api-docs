@@ -1,7 +1,7 @@
 # Contributor API
 ## Get a contributor
 ```yaml
-/api/content/contributor/{id}:
+/api/v1/contributor/{id}:
   get:
     summary: Get Contributor data
     parameters:
@@ -66,7 +66,7 @@
 ```
 ## Query Contributors
 ```yaml
-/api/content/contributors:
+/api/v1/contributors:
   get:
     summary: Query Contributors
     parameters:

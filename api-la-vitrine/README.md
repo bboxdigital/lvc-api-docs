@@ -15,7 +15,7 @@ L'API propose un ensemble de points de terminaison principaux, permettant aux pa
 - **[exhibitionEvents](v1/exhibitionEvents.md):** Récupérer des informations sur les expositions.
 - **[contributors](v1/contributors.md):** Accéder aux détails sur les contributeurs et artistes associés aux événements.
 - **[places](v1/places.md):** Récupérer des données liées aux lieux ou emplacements des événements.
-- **[additionalTypes](v1/additionalTypes.md):** Correspondent à des taxonomies pour catégoriser les données, par exemple les disciplines d'un événements (danse, musique, etc...)
+- **[additionalTypes](v1/additionalTypes.md):** Correspondent à des taxonomies pour catégoriser les données, par exemple la discipline (danse, musique, etc...)
 - **[search](v1/search.md):** Un point de terminaison polyvalent permettant aux utilisateurs d'effectuer des recherches sur tous les types d'événements.
 
 ### 2. Structure des Données
@@ -28,11 +28,11 @@ Pour les utilisateurs recherchant une représentation plus structurée et liée 
 
 ## Pour Commencer
 
-## Étape 1 : Obtenir une clé d'accès pour l'API
+### Étape 1 : Obtenir une clé d'accès pour l'API
 
 Avant de commencer à utiliser l'API, vous devez obtenir une clé d'accès unique pour authentifier vos requêtes.
 
-## Étape 2 : Authentification
+### Étape 2 : Authentification
 
 Pour utiliser cette API, vous devez inclure votre clé API dans l'en-tête de chaque demande :
 
@@ -44,7 +44,7 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 
 ## Migration
 
-Référez-vous à la [documentation de migration](migration/migration.md) pour plus d'informations sur comment faire la transition depuis l'ancien système.
+Référez-vous à la [documentation de migration](migration/migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
 
 ## OpenAPI Swagger File
 
