@@ -22,9 +22,11 @@ L'API propose un ensemble de points de terminaison principaux, permettant aux pa
 
 Des efforts ont été faits pour aligner étroitement la structure JSON avec les normes de [Schema.org](https://www.schema.org/). Cela assure non seulement la cohérence, mais facilite également l'adaptation au format JSON-LD, améliorant l'interopérabilité des données.
 
-### 3. Points de Terminaison JSON-LD
+### 3. Définition OpenAPI Swagger
 
-Pour les utilisateurs recherchant une représentation plus structurée et liée du contenu clé, l'API propose des points de terminaison JSON-LD séparés. Ces points de terminaison fournissent une représentation JSON-LD de base des informations essentielles, telles que les détails des événements, permettant une consommation de données plus riche et plus contextuelle. Cela permettra aux utilisateurs d'injecter facilement du JSON-LD dans leurs pages. _NOTE: documentation à venir_
+Vous pouvez visualiser l'API dans [l'éditeur d'API Swagger](https://editor.swagger.io/) en faisant un copier-coller des contenus du fichier ci-dessus:
+
+[Swagger File](v1/swagger/swagger.yaml)   
 
 ## Pour Commencer
 
@@ -46,8 +48,6 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 
 Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
 
-## Définition OpenAPI Swagger
+## Points de Terminaison JSON-LD
 
-Vous pouvez visualiser l'API dans [l'éditeur d'API Swagger](https://editor.swagger.io/) en faisant un copier-coller des contenus du fichier ci-dessus:
-
-[Swagger File](v1/swagger/swagger.yaml)   
+Pour les utilisateurs recherchant une représentation plus structurée et liée du contenu clé, l'API propose des points de terminaison JSON-LD séparés. Ces points de terminaison fournissent une représentation JSON-LD de base des informations essentielles, telles que les détails des événements, permettant une consommation de données plus riche et plus contextuelle. Cela permettra aux utilisateurs d'injecter facilement du JSON-LD dans leurs pages. _NOTE: documentation à venir_
