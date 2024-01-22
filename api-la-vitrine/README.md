@@ -44,7 +44,7 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 
 ## Migration
 
-Référez-vous à la [documentation de migration](migration/migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
+Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
 
 ## OpenAPI Swagger File
 
