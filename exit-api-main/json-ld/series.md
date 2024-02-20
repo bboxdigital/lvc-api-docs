@@ -8,7 +8,7 @@ Think series, what information do we need to render one single series page.
 TODO: include "offer" as per Schema.org standards.  Ticket + pricing info
 
 What information should be included in the subEvent? LVCOffer type perhaps.
-```
+```json
 // Example of how to use subEvent
 {
   "@context": "https://schema.org",
