@@ -1,0 +1,617 @@
+openapi: 3.0.0
+info:
+  title: La Vitrine Culturelle Data Consumer API
+  description: The La Vitrine Culturelle Data Consumer API is a RESTful API that provides access to La Vitrine Culturelle's data. The API is designed to be used by third-party applications that wish to display La Vitrine Culturelle's data on their own websites or applications.
+  version: 1.0.0
+servers:
+  - url: https://api.lavitrine.com/v1
+    description: Production server
+  - url: https://staging-api.lavitrine.com
+    description: Staging server
+paths:
+  /api/v1/events/{id}:
+    get:
+      summary: Get event data by ID
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The ID of the event
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Event",
+                  "url": "https://example.com/event-page",
+                  "identifier": 14,
+                  "name": "John Smith Comedy Show",
+                  "description": "Join us for a night of laughter with the hilarious John Smith.",
+                  "superEvent": {
+                    "@type": "EventSeries",
+                    "identifier": 6,
+                    "name": "Comedy Tour 2024"
+                  },
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://example.com/some-image.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Adult"
+                  },
+                  "eventStatus": "EventScheduled",
+                  "eventAttendanceMode": "OfflineEventAttendanceMode",
+                  "startDate": "2024-02-15T19:00:00",
+                  "endDate": "2024-02-15T21:00:00",
+                  "performer": {
+                    "@type": "Person",
+                    "identifier": 10,
+                    "name": "John Smith",
+                    "image": "https://www.johnsmithcomedy.com/images/john-smith.jpg",
+                    "url": "https://john-smith.com",
+                    "sameAs": ["https://www.linkedin.com/in/john-smith", "https://twitter.com/john-smith", "https://www.facebook.com/john-smith"]
+                  },
+                  "location": {
+                    "identifier": 23,
+                    "name": "Comedy Club A",
+                    "image": "https://example.com/photo.jpg",
+                    "url": "https://comedy-club-a.com",
+                    "sameAs": ["https://www.linkedin.com/in/comedy-club-a", "https://twitter.com/comedy-club-a", "https://www.facebook.com/comedy-club-a"],
+                    "address": {
+                      "streetAddress": "789 Laughter Lane",
+                      "addressLocality": "Humorville",
+                      "addressRegion": "Quebec",
+                      "postalCode": "G1T 4R1",
+                      "addressCountry": "CA"
+                    },
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 37.23332,
+                      "longitude": -133.4333
+                    },
+                    "maximumAttendeeCapacity": 240
+                  },
+                  "offers": {
+                    "url": "http://example.com/ticket-sales-club-a",
+                    "priceCurrency": "CAD",
+                    "priceSpecification": {
+                      "price": 10.0,
+                      "minPrice": 5.0
+                    },
+                    "availability": "InStock",
+                    "availabilityEnds": "2024-03-04T10:00:00",
+                    "availabilityStarts": "2023-08-04T10:00:00"
+                  },
+                  "isAccessibleForFree": false
+                }
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: An Event with specified ID not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/exhibitionEvents/{id}:
+    get:
+      summary: Get exhibitionEvents data by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the exhibition
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "identifer": 492,
+                  "@type": "ExhibitionEvent"
+                  "type": "Permanent",
+                  "eventStatus": "EventScheduled",
+                  "name": "John Smith Comedy Show",
+                  "description": "Join us for a night of laughter with the hilarious John Smith.",
+                  "eventAttendanceMode": "OfflineEventAttendanceMode",
+                  "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Adult"
+                  },
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://example.com/some-image.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "performer": {
+                    "@type": "Person",
+                    "identifier": 853,
+                    "name": "John Smith",
+                    "image": "https://example.com/john-smith.jpg",
+                    "sameAs": [
+                      "https://www.linkedin.com/in/john-smith",
+                      "https://twitter.com/john-smith",
+                      "https://www.facebook.com/john-smith"
+                    ]
+                  },
+                  "location": {
+                    "identifier": 23,
+                    "name": "Comedy Club A",
+                    "image": "https://example.com/photo.jpg",
+                    "url": "https://comedy-club-a.com",
+                    "sameAs": ["https://www.linkedin.com/in/comedy-club-a", "https://twitter.com/comedy-club-a", "https://www.facebook.com/comedy-club-a"],
+                    "address": {
+                      "streetAddress": "789 Laughter Lane",
+                      "addressLocality": "Humorville",
+                      "addressRegion": "Quebec",
+                      "postalCode": "G1T 4R1",
+                      "addressCountry": "CA"
+                    },
+                    "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 37.23332,
+                      "longitude": -133.4333
+                    },
+                    "maximumAttendeeCapacity": 240
+                  },
+                  "lastModified": "2024-02-15T19:00:00"
+                }
+        '404':
+          description: An Exhibition with specified ID was not found.
+        '401':
+          description: Authorization information is missing or invalid.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/eventSeries/{id}:
+    get:
+      summary: Get eventSeries data by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the series
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "id": 492,
+                  "@type": "EventSeries",
+                  "eventStatus": "EventScheduled",
+                  "name": "John Smith Comedy Festival",
+                  "description": "Join us for a night of laughter with the hilarious John Smith.",
+                  "eventAttendanceMode": "OfflineEventAttendanceMode",
+                  "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Adult"
+                  },
+                  "startDate": "2023-12-15T19:00:00",
+                  "endDate": "2024-03-14T19:00:00",
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://example.com/some-image.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "performer": {
+                    "@type": "Person",
+                    "identifier": 10,
+                    "name": "John Smith",
+                    "image": "https://www.johnsmithcomedy.com/images/john-smith.jpg",
+                    "url": "https://john-smith.com",
+                    "sameAs": ["https://www.linkedin.com/in/john-smith", "https://twitter.com/john-smith", "https://www.facebook.com/john-smith"]
+                  },
+                  "location": {
+                    "@type": "Place",
+                    "identifier": "415",
+                    "name": "Example Place A",
+                    "url": "https://example-place-a.com",
+                    "address": {
+                      "streetAddress": "789 Laughter Lane",
+                      "addressLocality": "Humorville",
+                      "addressRegion": "Quebec",
+                      "postalCode": "G1T 4R1",
+                      "addressCountry": "CA"
+                    },
+                    "geo": {
+                      "@type": "GeoCoordinate",
+                      "latitude": 37.23332,
+                      "longitude": -133.43330
+                    },
+                    "maximumAttendeeCapacity": 240
+                  },
+                  "subEvent": [
+                    {
+                      "@type": "Event",
+                      "identifier": 14,
+                      "name": "John Smith Comedy Show",
+                      "image": "https://example.com/some-image.jpg",
+                      "startDate": "2024-02-15T19:00:00",
+                      "endDate": "2024-02-15T21:00:00",
+                      "location": {
+                        "@type": "Place",
+                        "identifier": "23",
+                        "name": "Comedy Club A",
+                        "url": "https://comedy-club-a.com"
+                      }
+                    },
+                    {
+                      "@type": "Event",
+                      "identifier": 15,
+                      "name": "Jane Doe Comedy Show",
+                      "image": "https://example.com/some-image.jpg",
+                      "startDate": "2024-02-15T19:00:00",
+                      "endDate": "2024-02-15T21:00:00",
+                      "location": {
+                        "@type": "Place",
+                        "identifier": "24",
+                        "name": "Comedy Club B",
+                        "url": "https://comedy-club-b.com"
+                      }
+                    }
+                  ]
+                }
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Event Series with specified ID not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/searchEvents:
+    get:
+      summary: Retrieve event content, sorted chronologically by startDate
+      parameters:
+        - name: schema
+          in: query
+          description: filter by specific event type only
+          required: false
+          schema:
+            type: string
+            enum:
+             - event
+             - series
+             - exhibition
+        - name: eventId
+          in: query
+          description: filter on eventId, this will only return "offers" for a given eventId ("event" type).
+          required: false
+          schema:
+            type: string
+        - name: contributor
+          in: query
+          description: filter on contributor, this will return all "offers" for a given contributor
+          required: false
+          schema:
+            type: string
+        - name: location
+          in: query
+          description: filter on location, this will return all "offers" for a given location
+          required: false
+          schema:
+            type: string
+        - name: additionalType
+          in: query
+          description: filter on additionalType, this will return all "offers for a given additionalType.
+          required: false
+          schema: 
+            type: string
+        - name: startDate
+          in: query
+          description: filter on startDate (UNIX Timestamp), this will return all "offers" for a given startDate
+          required: false
+          schema:
+            type: integer
+        - name: endDate
+          in: query
+          description: filter on date range by adding endDate (UNIX Timestamp) if startDate has a value. If startDate is null, filter on endDate only.
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Limit the amount of data returned (default is 10)
+          required: false
+          schema:
+            type: integer
+            default: 10
+        - name: offset
+          in: query
+          description: Offset for paginating results (default is 0)
+          required: false
+          schema:
+            type: integer
+            default: 0
+        - name: lastModified
+          in: query
+          description: UNIX Timestamp (UTC)
+          required: false
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/places/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The ID of the place
+        - $ref: '#/components/parameters/lang'
+      summary: Get place details by ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Place",
+                  "identifier": 123,
+                  "name": "Event Venue A",
+                  "description": "A beautiful location to host your next event",
+                  "url": "https://example-venue-a.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "789 Laughter Lane",
+                    "addressLocality": "Humorville",
+                    "addressRegion": "Quebec",
+                    "postalCode": "G1T 4R1",
+                    "addressCountry": "CA"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 37.23332,
+                    "longitude": -133.43330
+                  },
+                  "maximumAttendeeCapacity": 240,
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://example.com/some-image.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "sameAs": [
+                    "https://www.linkedin.com/in/event-venue-a",
+                    "https://twitter.com/event-venue-a",
+                    "https://www.facebook.com/event-venue-a"
+                  ]
+                }
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A place with specified ID not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/places:
+    get:
+      summary: Query places 
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum:
+            - "Place"
+            - "Sector"
+          description: filter by type of place, optional
+        - name: hasOfferFilter
+          in: query
+          schema:
+            type: boolean
+            default: true
+          description: by default, places will be filtered by if they have offers. 
+        - name: lastModified
+          in: query
+          description: UNIX Timestamp (UTC)
+          required: false
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/lang'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "@context": "http://schema.org",
+                  "@type": "Place",
+                  "identifier": 123,
+                  "name": "Event Venue A",
+                  "description": "A beautiful location to host your next event",
+                  "url": "https://example-venue-a.com",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "789 Laughter Lane",
+                    "addressLocality": "Humorville",
+                    "addressRegion": "Quebec",
+                    "postalCode": "G1T 4R1",
+                    "addressCountry": "CA"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 37.23332,
+                    "longitude": -133.43330
+                  },
+                  "maximumAttendeeCapacity": 240,
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://example.com/some-image.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "containedInPlace": "Main Event Venue",
+                  "containsPlace": [
+                    "Event Venue B",
+                    "Event Venue C"
+                  ],
+                  "event": [
+                    "Event A",
+                    "Event B"
+                  ]
+                  "sameAs": [
+                    "https://www.linkedin.com/in/event-venue-a",
+                    "https://twitter.com/event-venue-a",
+                    "https://www.facebook.com/event-venue-a"
+                  ]
+                }
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/contributors/{id}:
+    get:
+      summary: Get Contributor data
+      parameters:
+        - name: id
+          description: id of contributor
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Person",
+                  "identifier": 10,
+                  "name": "John Smith",
+                  "alternateName": "John Smith Funny Guy",
+                  "gender": "Male",
+                  "birthDate": "1980-01-15",
+                  "nationality": "Canada",
+                  "description": "John Smith is a comedian from Montreal.",
+                  "image": {
+                    "@type": "ImageObject",
+                    "contentUrl": "https://www.johnsmithcomedy.com/images/john-smith.jpg",
+                    "description": "An example image",
+                    "encodingFormat": "image/jpeg",
+                    "creditText": "Jane Doe"
+                  },
+                  "url": "https://john-smith.com",
+                  "sameAs": [
+                    "https://www.linkedin.com/in/john-smith",
+                    "https://twitter.com/john-smith",
+                    "https://www.facebook.com/john-smith"
+                  ],
+                  "performerIn": {
+                    "name": "John Smith Comedy Show",
+                    "startDate": "2024-02-15T19:00:00",
+                    "endDate": "2024-02-15T21:00:00",
+                    "image": "https://example.com/john-smith.jpg",
+                    "location": {
+                      "@type": "Place",
+                      "name": "Comedy Club A"
+                    }
+                  },
+                  "affiliation": {
+                    "name": "Comedy Organization"
+                  }
+                }
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/disciplines/{id}:
+    get:
+      summary: Get disciplines data
+      parameters:
+        - name: id
+          description: id of discipline
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+        '401':
+          description: Authorization information is missing or invalid.
+        '404':
+          description: A additionalType with specified ID not found.
+        '5XX':
+          description: Unexpected error.
+  /api/v1/disciplines:
+    get:
+      summary: Query disciplines
+      parameters:
+        - name: lastModified
+          in: query
+          description: UNIX Timestamp (UTC)
+          required: false
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/lang'
+      responses: 
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: >
+        '401': 
+          description: Authorization information is missing or invalid.
+        '404':
+          description: Not found.
+        '5XX':
+          description: Unexpected error.
+components:
+  parameters:
+    lang: 
+      name: lang
+      in: query
+      description: Language preference for data (fr or en, default is fr)
+      schema:
+        type: string
+        enum:
+          - "fr"
+          - "en"
+        default: "fr"
