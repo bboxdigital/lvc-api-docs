@@ -9,6 +9,7 @@
    - [Étape 1 : Obtenir une clé d'accès pour l'API](#étape-1--obtenir-une-clé-daccès-pour-lapi)
    - [Étape 2 : Authentification](#étape-2--authentification)
 4. [Migration de l'ancien API](#migration-de-lancien-api)
+5. [Notes importantes](#notes-importantes)
 
 ## Introduction
 
@@ -20,14 +21,14 @@ Bienvenue dans la documentation officielle de l'API REST de La Vitrine Culturell
 
 L'API propose un ensemble de points de terminaison principaux, permettant aux partenaires externes de récupérer facilement des données de la base de données de La Vitrine. Les points de terminaison principaux incluent:
 
-- **[events](v1/events.md):** Récupérer des informations sur les événements individuels.
-  - **[eventOffer](v1/events.md#obtenir-un-eventoffer-representation):**: Les offres (représentations) reliées à un événement.
-- **[eventSeries](v1/eventSeries.md):** Récupérer des informations sur les séries d'événements (festivals, tournées, etc...)
-- **[exhibitionEvents](v1/exhibitionEvents.md):** Récupérer des informations sur les expositions.
-- **[contributors](v1/contributors.md):** Accéder aux détails sur les contributeurs et artistes associés aux événements.
-- **[places](v1/places.md):** Récupérer des données liées aux lieux ou emplacements des événements.
-- **[additionalTypes](v1/additionalTypes.md):** Correspondent à des taxonomies pour catégoriser les données, par exemple la discipline (danse, musique, etc...)
-- **[searchEvents](v1/searchEvents.md):** Un point de terminaison polyvalent permettant aux utilisateurs d'effectuer des recherches sur tous les types d'événements.
+- **[eventCollections](v1/eventCollections.md):** Récupérez des informations sur les collections d'événements.
+- **[events](v1/events.md):** Récupérez des informations sur des événements individuels.
+- **[eventSeries](v1/eventSeries.md):** Récupérez des informations sur les séries d'événements (festivals, tournées, etc...)
+- **[exhibitionEvents](v1/exhibitionEvents.md):** Récupérez des informations sur les expositions.
+- **[contributors](v1/contributors.md):** Accédez aux détails sur les contributeurs et les artistes associés aux événements.
+- **[places](v1/places.md):** Récupérez des données liées aux lieux ou aux salles des événements.
+- **[disciplines](v1/disciplines.md):** Correspondent aux taxonomies pour la catégorisation des données, telles que la discipline (danse, musique, etc...)
+- **[searchEvents](v1/searchEvents.md):** Un point de terminaison polyvalent permettant aux utilisateurs de rechercher tous types d'événements.
 
 ### 2. Structure des Données
 
@@ -60,3 +61,12 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 ## Migration de l'ancien API
 
 Référez-vous à la [documentation de migration](migration.md) pour plus d'informations sur comment faire la transition depuis [l'ancien système](https://documentation.lavitrine.com/).
+
+## Notes importantes
+- Si les données doivent être utilisées en tant que JSON-LD sur un site web, les champs suivants doivent être supprimés avant l'injection de JSON-LD car ils ne sont pas reconnus par Schema.org ou Google Rich Results :
+  - `eventCollectionId`
+  - `thumbnail`
+  - `lastModified`
+  - `exhibitionType`
+  - `disciplines`
+- Pour l'injection de JSON-LD, l'utilisation du champ `@id` est recommandée pour garantir une identification unique du contenu à travers le web. Consultez [Schema.org](https://schema.org/docs/jsonld) pour plus d'informations.

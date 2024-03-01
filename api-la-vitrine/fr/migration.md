@@ -8,6 +8,7 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
 
 - **Restructuration des Données et Alignement avec Schema.org :**
   - Refonte des noms de champs et des structures de données pour s'aligner étroitement avec les normes de Schema.org.
+  - Injection facile de JSON-LD dans les pages web pour améliorer le référencement et l'interopérabilité des données.
   - Changements significatifs pour refléter le nouveau modèle de données de La Vitrine Culturelle.
 
 - **Exposition Améliorée des Données :**
@@ -29,51 +30,46 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
   - Les `secteurs` sont maintenant classifiés comme des `place` avec des types spécifiques.
 
 - **Nouvelles Entités de Données :**
-  - Introduction de `eventOffers` pour remplacer le concept précédent de représentations.
-  - Introduction de `exhibitionEvents` comme une entité de données distincte.
-  - Introduction de `eventSeries` comme une entité de données distincte.
-  - Introduction de `contributors` pour remplacer le concept précédent d'artiste.
-
-- **Les disciplines sont maintenant des additionalTypes :**
-  - Le concept de discipline a été remplacé par les additionalTypes, qui sont un système de taxonomie plus générique.
-  - Un mécanisme pour établir les équivalences entre les disciplines et additionalTypes sera documenté.
+  - Introduction des `events` pour remplacer le concept précédent de "représentations".
+  - Introduction des `eventCollections` pour remplacer le concept précédent d'"événements".
+  - Introduction du type `exhibitionEvents` en tant qu'entité de données distincte.
+  - Introduction du type `eventSeries` en tant qu'entité de données distincte.
+  - Introduction du `contributors` pour remplacer le concept précédent d'"artiste".
 
 ## Migrer depuis `get_events`
-Remplacé par le point de terminaison `/api/v1/searchEvents`. Voir la [documentation](v1/searchEvents.md) pour plus de détails.
+Remplacé par le point de terminaison `/searchEvents`. Voir la [documentation](v1/searchEvents.md) pour plus de détails.
 
 ## Migrer depuis `get_activity` & `get_activitypublic`
-Remplacé par `/api/v1/events`, `/api/v1/exhibitionEvents`, `/api/v1/eventSeries`.
+Remplacé par `/eventCollections/{id}`, `/events/{id}`, `/exhibitionEvents/{id}`, `/eventSeries/{id}`.
 
 Les points de terminaison des événements ont été séparés par type, en raison du fait que dans la nouvelle structure de données, le même ID peut exister sur différents types d'événements. Les réponses retournent également des données légèrement différentes, selon le type d'événement.
 
 Les utilisateurs peuvent maintenant récupérer des données d'événements individuels en utilisant ces points de terminaison, mais ils doivent savoir quel type utiliser pour le bon point de terminaison.
 
 Veuillez vous référer à la documentation des points de terminaison pour plus d'informations :
+- [eventCollection](v1/eventCollections.md)
 - [events](v1/events.md)
-- [eventOffers](v1/events.md#obtenir-un-eventoffer-representation)
 - [exhibitionEvents](v1/exhibitionEvents.md)
-- [eventSeries](v1/eventSeries.md)
+- [eventSeries](v1/eventSearch.md) 
 
 ## Migrer depuis `get_activies` & `get_activiespublic`
-Remplacé par `/api/v1/searchEvents`. Ce point de terminaison servira de requête pour tous les types d'événements et avec l'introduction d'une vaste gamme de paramètres de requête, similaires aux commandes précédentes.
+Remplacé par `/searchEvents`. Ce point de terminaison servira de requête pour tous les types d'événements et avec l'introduction d'une vaste gamme de paramètres de requête, similaires aux commandes précédentes.
 
 Veuillez vous référer à la [documentation](v1/searchEvents.md) pour une liste détaillée de tous les paramètres de requête pris en charge.
 
 ## Migrer depuis `get_locations` & `get_locationspublic`
-Remplacé par `/api/v1/places`, tous les `locations` et `sectors` sont maintenant sous le même point de terminaison.
+Remplacé par `/places`, tous les `locations` et `sectors` sont maintenant sous le même point de terminaison.
 
 Le paramètre `organisme` a été supprimé.
-
-Le paramètre `withShowing` a été renommé pour mieux correspondre à sa fonction.
 
 Veuillez vous référer à la [documentation](v1/places.md) des points de terminaison pour plus d'informations.
 
 ## Migrer depuis `get_artists`
-Remplacé par `/api/v1/contributors`
+Remplacé par `/contributors`
 
 Veuillez vous référer à la [documentation](v1/contributors.md) pour plus d'informations.
 
 ## Migrer depuis `get_disciplines`
-Remplacé par `/api/v1/additionalTypes`
+Remplacé par `/disciplines`
 
-Veuillez vous référer à la [documentation](v1/additionalTypes.md) pour plus d'informations.
+Veuillez vous référer à la [documentation](v1/disciplines.md) pour plus d'informations.
