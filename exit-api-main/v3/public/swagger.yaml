@@ -45,6 +45,7 @@ paths:
                     "encodingFormat": "image/jpeg",
                     "creditText": "Jane Doe"
                   },
+                  "thumbnail": "https://example.com/some-thumbnail.jpg",
                   "audience": {
                     "@type": "Audience",
                     "audienceType": "Adult"
@@ -65,6 +66,7 @@ paths:
                     "identifier": 23,
                     "name": "Comedy Club A",
                     "image": "https://example.com/photo.jpg",
+                    "thumbnail": "https://example.com/photo-thumbnail.jpg",
                     "url": "https://comedy-club-a.com",
                     "sameAs": ["https://www.linkedin.com/in/comedy-club-a", "https://twitter.com/comedy-club-a", "https://www.facebook.com/comedy-club-a"],
                     "address": {
@@ -92,7 +94,8 @@ paths:
                     "availabilityEnds": "2024-03-04T10:00:00",
                     "availabilityStarts": "2023-08-04T10:00:00"
                   },
-                  "isAccessibleForFree": false
+                  "isAccessibleForFree": false,
+                  "lastModified": "2024-02-15T19:00:00"
                 }
         '401':
           description: Authorization information is missing or invalid.
@@ -136,6 +139,7 @@ paths:
                     "encodingFormat": "image/jpeg",
                     "creditText": "Jane Doe"
                   },
+                  thumbnail: "https://example.com/some-thumbnail.jpg",
                   "performer": {
                     "@type": "Person",
                     "identifier": 853,
@@ -212,6 +216,7 @@ paths:
                     "encodingFormat": "image/jpeg",
                     "creditText": "Jane Doe"
                   },
+                  "thumbnail": "https://example.com/some-thumbnail.jpg",
                   "performer": {
                     "@type": "Person",
                     "identifier": 10,
@@ -245,6 +250,7 @@ paths:
                       "identifier": 14,
                       "name": "John Smith Comedy Show",
                       "image": "https://example.com/some-image.jpg",
+                      "thumbnail": "https://example.com/some-thumbnail.jpg",
                       "startDate": "2024-02-15T19:00:00",
                       "endDate": "2024-02-15T21:00:00",
                       "location": {
