@@ -74,3 +74,6 @@ Replaced by `/disciplines`
 
 Refer to [documentation](v1/disciplines.md) for more information.
 
+## Images and thumbnails
+
+All items with an "image" property corresponding to the URL off the full size image will also have a "thumbnail" property corresponding to the image in 200x200 format.

@@ -71,5 +71,3 @@ Refer to the [migration documentation](migration.md) for more information on how
   - `exhibitionType`
   - `disciplines`
 - For JSON-LD injection, utilization of the `@id` field is recommended to ensure unique identification of content across the web. Refer to [Schema.org](https://schema.org/docs/jsonld) for more information.
-
-

@@ -73,3 +73,7 @@ Veuillez vous référer à la [documentation](v1/contributors.md) pour plus d'in
 Remplacé par `/disciplines`
 
 Veuillez vous référer à la [documentation](v1/disciplines.md) pour plus d'informations.
+
+## Images et thumbnails
+
+Tous les items qui ont une propriété "image" correspondant à l'URL de l'image plein format auront aussi une propriété "thumbnail" qui correspond à l'image en format 200x200.
