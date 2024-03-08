@@ -25,13 +25,11 @@ Bienvenue dans la documentation officielle de l'API REST de La Vitrine Culturell
 
 L'API propose un ensemble de points de terminaison principaux, permettant aux partenaires externes de récupérer facilement des données de la base de données de La Vitrine. Les points de terminaison principaux incluent:
 
-- **[eventCollections](v1/eventCollections.md):** Récupérez des informations sur les collections d'événements.
 - **[events](v1/events.md):** Récupérez des informations sur des événements individuels.
 - **[eventSeries](v1/eventSeries.md):** Récupérez des informations sur les séries d'événements (festivals, tournées, etc...)
 - **[exhibitionEvents](v1/exhibitionEvents.md):** Récupérez des informations sur les expositions.
 - **[contributors](v1/contributors.md):** Accédez aux détails sur les contributeurs et les artistes associés aux événements.
 - **[places](v1/places.md):** Récupérez des données liées aux lieux ou aux salles des événements.
-- **[disciplines](v1/disciplines.md):** Correspondent aux taxonomies pour la catégorisation des données, telles que la discipline (danse, musique, etc...)
 - **[searchEvents](v1/searchEvents.md):** Un point de terminaison polyvalent permettant aux utilisateurs de rechercher tous types d'événements.
 
 ### 2. Structure des Données

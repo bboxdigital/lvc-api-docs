@@ -40,14 +40,13 @@ Cette mise à jour majeure apporte une refonte complète de l'API, en mettant l'
 Remplacé par le point de terminaison `/searchEvents`. Voir la [documentation](v1/searchEvents.md) pour plus de détails.
 
 ## Migrer depuis `get_activity` & `get_activitypublic`
-Remplacé par `/eventCollections/{id}`, `/events/{id}`, `/exhibitionEvents/{id}`, `/eventSeries/{id}`.
+Remplacé par `/events/{id}`, `/exhibitionEvents/{id}`, `/eventSeries/{id}`.
 
 Les points de terminaison des événements ont été séparés par type, en raison du fait que dans la nouvelle structure de données, le même ID peut exister sur différents types d'événements. Les réponses retournent également des données légèrement différentes, selon le type d'événement.
 
 Les utilisateurs peuvent maintenant récupérer des données d'événements individuels en utilisant ces points de terminaison, mais ils doivent savoir quel type utiliser pour le bon point de terminaison.
 
 Veuillez vous référer à la documentation des points de terminaison pour plus d'informations :
-- [eventCollection](v1/eventCollections.md)
 - [events](v1/events.md)
 - [exhibitionEvents](v1/exhibitionEvents.md)
 - [eventSeries](v1/eventSearch.md) 
@@ -68,11 +67,6 @@ Veuillez vous référer à la [documentation](v1/places.md) des points de termin
 Remplacé par `/contributors`
 
 Veuillez vous référer à la [documentation](v1/contributors.md) pour plus d'informations.
-
-## Migrer depuis `get_disciplines`
-Remplacé par `/disciplines`
-
-Veuillez vous référer à la [documentation](v1/disciplines.md) pour plus d'informations.
 
 ## Images et thumbnails
 

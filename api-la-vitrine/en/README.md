@@ -28,13 +28,11 @@ La Vitrine has long been a curator of events in Quebec, serving as a go-to sourc
 
 The API provides a set of core endpoints, allowing external partners to easily retrieve data from La Vitrine's database. The main endpoints include:
 
-- **[eventCollections](v1/eventCollections.md):** Retrieve information about event collections.
 - **[events](v1/events.md):** Retrieve information about individual events.
 - **[eventSeries](v1/eventSeries.md):** Retrieve information about event series (festivals, tours, etc...)
 - **[exhibitionEvents](v1/exhibitionEvents.md):** Retrieve information about exhibitions.
 - **[contributors](v1/contributors.md):** Access details about contributors and artists associated with events.
 - **[places](v1/places.md):** Retrieve data related to the locations or venues of events.
-- **[disciplines](v1/disciplines.md):** Correspond to taxonomies for categorizing data, such as discipline (dance, music, etc...)
 - **[searchEvents](v1/searchEvents.md):** A versatile endpoint allowing users to search across all types of events.
 
 ### 2. Data Structure

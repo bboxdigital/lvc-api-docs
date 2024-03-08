@@ -39,14 +39,13 @@ This major update brings a complete overhaul of the API, focusing on enhanced st
 Replaced by the `/searchEvents` endpoint. See [documentation](v1/searchEvents.md) for more details.
 
 ## Migrating from `get_activity` & `get_activitypublic`
-Replaced by the `/eventCollections/{id}`, `/events/{id}`, `/exhibitionEvents/{id}`, `/eventSeries/{id}`.
+Replaced by the `/events/{id}`, `/exhibitionEvents/{id}`, `/eventSeries/{id}`.
 
 Event endpoints have been separated by type, due to the fact that in the new data structure the same ID can exist on different types of events. The responses are also return slightly different data, depending on the event type.
 
 Users can now fetch individual event data using these endpoints, however they must know what type to use the correct endpoint.
 
 Please refer to endpoint documentation for more information:
-- [eventCollection](v1/eventCollections.md)
 - [events](v1/events.md)
 - [exhibitionEvents](v1/exhibitionEvents.md)
 - [eventSeries](v1/eventSearch.md) 
@@ -68,11 +67,6 @@ Please refer to endpoint [documentation](v1/places.md) for more information.
 Replaced by `/contributor`
 
 Refer to [documentation](v1/contributors.md) for more information.
-
-## Migrating from `get_disciplines`
-Replaced by `/disciplines`
-
-Refer to [documentation](v1/disciplines.md) for more information.
 
 ## Images and thumbnails
 
