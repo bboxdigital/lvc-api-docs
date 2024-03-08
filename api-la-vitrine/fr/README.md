@@ -1,3 +1,7 @@
+# DOCUMENT DE TRAVAIL
+
+Cette documentation est un travail en cours et peut changer jusqu'à ce que la version finale soit approuvée.
+
 # API REST de La Vitrine Culturelle (LVC)
 
 1. [Introduction](#introduction)

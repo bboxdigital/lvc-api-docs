@@ -1,3 +1,7 @@
+# WORK IN PROGRESS
+
+This documentation is a work in progress and may change until the final version is approved.
+
 # La Vitrine Culturelle (LVC) REST API Documentation
 1. [Introduction](#introduction)
 2. [Key Features](#key-features)
