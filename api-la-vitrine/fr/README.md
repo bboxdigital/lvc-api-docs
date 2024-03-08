@@ -42,6 +42,26 @@ Vous pouvez visualiser l'API dans [l'éditeur d'API Swagger](https://editor.swag
 
 [Cliquer ici](https://app.screencastify.com/v3/watch/TwH4f13leSEVbsdRJePn) pour une courte vidéo qui montre comment utiliser l'éditeur.
 
+### Politique de limitation de débit
+
+Pour garantir un accès équitable à nos services et protéger notre infrastructure contre les abus, nous appliquons une politique de limitation de débit sur notre API. Cette politique nous aide à maintenir une qualité de service et une disponibilité élevées pour tous les partenaires.
+
+#### Limites
+
+Limite de débit standard: 100 requêtes par minute et par clé API.
+Limite de débit étendue: 1000 requêtes par minute par clé API, disponible sur demande.
+
+#### En-têtes de réponse
+
+Notre API fournit les en-têtes HTTP suivants dans chaque réponse pour vous informer de l'état actuel de votre limite de débit:
+- `X-RateLimit-Limit`: le nombre maximum de requêtes que vous êtes autorisé à effectuer par minute.
+- `X-RateLimit-Remaining`: nombre de requêtes restantes dans la fenêtre de limite de débit actuelle.
+- `X-RateLimit-Reset`: heure à laquelle la fenêtre de limite de débit actuelle se réinitialise en secondes d'époque UTC.
+
+#### Dépassement de la limite
+
+Si vous dépassez la limite de débit, vous recevrez un code d'état de réponse `429 Too Many Requests` et vous devrez attendre que la fenêtre de limite de débit se réinitialise avant de faire des demandes supplémentaires.
+
 ## Pour Commencer
 
 ### Étape 1 : Obtenir une clé d'accès pour l'API

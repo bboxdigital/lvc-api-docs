@@ -45,6 +45,26 @@ You can visualize the API in the [Swagger API editor](https://editor.swagger.io/
 
 [Click here](https://app.screencastify.com/v3/watch/TwH4f13leSEVbsdRJePn) for a short video demonstrating how to use the editor.
 
+### Rate Limiting Policy
+
+To ensure equitable access to our services and protect our infrastructure from abuse, we enforce a rate limiting policy on our API. This policy helps us maintain high service quality and availability for all partners.
+
+#### Limits
+
+Standard Rate Limit: 100 requests per minute per API key.
+Extended Rate Limit: 1000 requests per minute per API key, available upon request.
+
+#### Response Headers
+
+Our API provides the following HTTP headers in every response to inform you of your current rate limit status:
+- `X-RateLimit-Limit`: The maximum number of requests you’re permitted to make per minute.
+- `X-RateLimit-Remaining`: The number of requests remaining in the current rate limit window.
+- `X-RateLimit-Reset`: The time at which the current rate limit window resets in UTC epoch seconds.
+
+#### Exceeding the Limit
+
+If you exceed the rate limit, you will receive a `429 Too Many Requests` response status code, and you need to wait until the rate limit window resets before making additional requests.
+
 ## Getting Started
 
 ### Step 1: Obtaining an API Access Key
