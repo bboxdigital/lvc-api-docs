@@ -17,7 +17,7 @@ https://URL_API
 **Paramètres:**
 
 - `file` (obligatoire): Le fichier CSV que vous souhaitez uploader.
-- `schema` (obligatoire): Le schéma associé au fichier. Les valeurs possibles sont: "additionalTypes", "contributions", "contributors", "eventOffers", "events", "eventSeries", "exhibitionEvents", "images", "places".
+- `type` (obligatoire): Le type associé au fichier. Les valeurs possibles sont: "additionalTypes", "contributions", "contributors", "eventOffers", "events", "eventSeries", "exhibitionEvents", "images", "places".
 
 **Réponses:**
 
@@ -63,7 +63,7 @@ Remplacez `VOTRE_CLÉ_API` par la clé API que nous vous avons fournie.
 curl -X POST \
      -H "Authorization: Bearer VOTRE_CLÉ_API" \
      -F "file=@chemin_vers_votre_fichier.csv" \
-     -F "schema=events" \
+     -F "type=events" \
      https://URL_API/v1/csv_upload
 ```
 
